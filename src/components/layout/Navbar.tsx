@@ -19,11 +19,11 @@ const Navbar = () => {
 
   useEffect(() => setMobileOpen(false), [location]);
 
-  // UPDATED: Added isExternal flag and pointed Custom Cabinets to port 5174
+  // UPDATED: Added isExternal flag and pointed Custom Cabinets to your LIVE 3D App
   const links = [
     { to: '/', label: 'Home', isExternal: false },
     { to: '/shop', label: 'Shop', isExternal: false },
-    { to: 'http://localhost:5174', label: 'Custom Cabinets', isExternal: true },
+    { to: 'https://comforting-travesseiro-c067a5.netlify.app', label: 'Custom Cabinets', isExternal: true },
     { to: '/about', label: 'About', isExternal: false },
     { to: '/contact', label: 'Contact', isExternal: false },
   ];
