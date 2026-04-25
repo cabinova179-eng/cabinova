@@ -31,11 +31,14 @@ const Hero = () => {
                 Shop Cabinets
               </button>
             </Link>
-            <Link to="/custom-cabinets">
+
+            {/* UPDATED: Links directly to your live 3D Configurator */}
+            <a href="https://comforting-travesseiro-c067a5.netlify.app">
               <button className="px-8 py-3.5 border border-primary/30 text-primary rounded-xl font-medium text-sm hover:border-primary/60 hover:bg-primary/5 transition-all">
                 Create Custom 3D Kitchen
               </button>
-            </Link>
+            </a>
+
           </div>
         </div>
       </div>

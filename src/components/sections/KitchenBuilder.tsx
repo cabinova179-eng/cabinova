@@ -1,6 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Ruler, Paintbrush, Factory, Wrench } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const steps = [
   { icon: Ruler, title: 'Measure', desc: 'We visit your space and take precise measurements for a perfect fit.' },
@@ -33,11 +32,14 @@ const KitchenBuilder = () => {
           ))}
         </div>
         <div className="text-center">
-          <Link to="/custom-cabinets">
+
+          {/* UPDATED: Links directly to your live 3D Configurator */}
+          <a href="https://comforting-travesseiro-c067a5.netlify.app">
             <button className="px-8 py-3.5 gold-gradient text-primary-foreground rounded-xl font-medium text-sm transition-all hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5">
               Design My Kitchen
             </button>
-          </Link>
+          </a>
+
         </div>
       </div>
     </section>
