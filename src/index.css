@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 12% 10%;
+    --foreground: 40 15% 92%;
+
+    --card: 220 12% 13%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 220 12% 12%;
+    --popover-foreground: 40 15% 92%;
+
+    --primary: 43 72% 55%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 10% 17%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 40 5% 58%;
+
+    --accent: 38 55% 62%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 43 20% 22%;
+    --input: 220 10% 18%;
+    --ring: 43 72% 55%;
+
+    --radius: 0.75rem;
+
+    --beige: 220 10% 14%;
+    --cream: 220 10% 12%;
+
+    --sidebar-background: 220 12% 11%;
+    --sidebar-foreground: 40 10% 75%;
+    --sidebar-primary: 43 72% 55%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 10% 16%;
+    --sidebar-accent-foreground: 40 15% 85%;
+    --sidebar-border: 43 15% 20%;
+    --sidebar-ring: 43 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[hsl(220,12%,12%)]/70 backdrop-blur-xl border border-[hsl(43,72%,55%)]/10;
+  }
+  .glass-card {
+    @apply bg-[hsl(220,12%,14%)]/80 backdrop-blur-lg border border-[hsl(43,72%,55%)]/10 shadow-lg shadow-black/10;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(43, 72%, 55%), hsl(38, 55%, 42%));
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, hsl(43, 80%, 65%), hsl(38, 60%, 50%), hsl(43, 80%, 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-glow {
+    box-shadow: 0 0 20px hsl(43, 72%, 55%, 0.1);
+  }
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      hsl(43, 72%, 55%, 0.06) 45%,
+      hsl(43, 72%, 55%, 0.12) 50%,
+      hsl(43, 72%, 55%, 0.06) 55%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+  }
+  .shimmer:hover::after {
+    transform: translateX(100%);
+  }
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
